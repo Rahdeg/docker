@@ -1,4 +1,4 @@
-FROM node:14-alpine3.10
+FROM node:12.18-alpine
 
 LABEL version="1.0"
 
@@ -6,7 +6,7 @@ LABEL discription="Development image for music api"
 
 WORKDIR /app
 
-COPY ["package.json","package-lock.json*","npm-shrinkwrap.json*", "./"]
+COPY ["package.json*","package-lock.json*","npm-shrinkwrap.json*", "./"]
 
 RUN npm install && npm cache clean --force
 
